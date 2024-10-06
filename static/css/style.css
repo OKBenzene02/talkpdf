@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.heading {
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    width: max-content;
+    border-radius: .5rem;
+}
+
+/* ============================================ Container ============================================ */
+
+.chat-container {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: .8rem;
+    border: .05rem solid rgb(215, 215, 215);
+    box-shadow: 0px 0px 20px 2px rgb(230, 230, 230);
+    display: flex;
+    flex-direction: column;
+    height: 78dvh;
+    position: relative;
+}
+
+/* ============================================ Select Model ============================================ */
+
+.chat-container > .mechanical-model {
+    display: flex;
+    justify-content: right;
+    margin-bottom: .5rem;
+    position: absolute;
+    margin-right: 1rem;
+    right: 0;
+}
+
+.chat-container > .mechanical-model > #model-select > .selected-model {
+    display: flex;
+    flex-direction: row;
+    gap: .1rem;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee7a;
+    padding: .8rem 2rem;
+    font-size: 18px;
+    border-radius: .8rem;
+    color: #626262ee;
+    letter-spacing: .4px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s ease-in background;
+}
+
+.chat-container > .mechanical-model > #model-select > .selected-model:hover {
+    background: #eeee;
+}
+
+.chat-container > .mechanical-model > #model-select > .model-dropdown {
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee7a;
+    padding: .8rem 1rem;
+    font-size: 18px;
+    border-radius: .8rem;
+    color: #626262ee;
+    letter-spacing: .4px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.chat-container > .mechanical-model > #model-select > .model-dropdown > .model-option {
+    padding: .5rem 1rem;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: .1s ease-in background;
+}
+
+
+.chat-container > .mechanical-model > #model-select > .model-dropdown > .model-option:hover {
+    background: #eeee;
+}
+
+/* ============================================ Chat Area Messages ============================================ */
+.chat-container > .chat-text-area {
+    margin: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    height: 80dvh;
+    width: 70dvw;
+    padding: 0 1rem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    /* scrollbar-gutter: none; */
+}
+
+::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+    height: 5px; /* Height of the scrollbar (for horizontal) */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker thumb on hover */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Track background */
+}
+
+.scrollable {
+    scrollbar-width: thin; /* Make scrollbar thin */
+    scrollbar-color: #888 transparent; /* Thumb color and track color */
+}
+
+/* Adjust hover state (only works on Firefox) */
+.scrollable:hover {
+    scrollbar-color: #999 transparent; /* Darker thumb on hover */
+}
+
+.chat-container > .chat-text-area > .system {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    text-align: left;
+    text-wrap: wrap;
+    color: #ffffff;
+    letter-spacing: .2px;
+    transition: .2s ease-in;
+    background: rgba(255, 22, 22, 0.7);
+}
+
+.chat-container > .chat-text-area > .human {
+    align-self: flex-end;
+    background-color: #eeeeee7a;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    max-width: 45%;
+    text-align: right;
+    text-wrap: wrap;
+    transition: .2s ease-in;
+    letter-spacing: .2px;
+}
+
+.chat-container > .chat-text-area > .ai {
+    align-self: flex-start;
+    background-color: #eeeeee7a;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    max-width: 45%;
+    text-align: left;
+    transition: .2s ease-in;
+    text-wrap: wrap;
+}
+
+.chat-container > .chat-text-area > .no-chat-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80dvh;
+    transition: .3s ease-in;
+}
+
+.chat-container > .chat-text-area > .no-chat-display > p {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.chat-container > .chat-text-area > .no-chat-display > .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.chat-container > .chat-text-area > .no-chat-display > .items > .item {
+    width: 30%;
+    height: 70%;
+    padding: 1rem;
+    background-color: #eeeeee7a;
+    border-radius: 1rem;
+    letter-spacing: .3px;
+    font-size: 15px;
+}
+
+/* ============================================ Upload Chat Send-Message ============================================ */
+.chat-container > .chat-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.chat-container > .chat-area > .upload {
+    background: rgb(46, 46, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border-radius: .8rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 2px rgb(230, 230, 230);
+    transition: .2s ease-in background;
+}
+
+.chat-container > .chat-area > .upload:hover {
+    background-color: black;
+}
+
+.chat-container > .chat-area > .input-field > .input {
+    padding: .6rem;
+    background: none;
+    border-radius: .8rem;
+    border: .05rem solid #333333ee;
+    min-width: 35dvw;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: .5px;
+    font-weight: 550;
+    box-shadow: 0px 0px 15px 2px rgb(230, 230, 230);
+}
+
+.chat-container > .chat-area > .send-button > .button {
+    background: rgb(46, 46, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem;
+    border-radius: .8rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 2px rgb(230, 230, 230);
+    transition: .2s ease-in background;
+}
+
+.chat-container > .chat-area > .send-button > .button:hover {
+    background: black;
+}
